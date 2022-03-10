@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{{ user }}'s Watchlist</title>
+    <title>这是一片荒原</title>
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css">
 </head>
-<body>
+<body style="text-align:center;">
     <h2>
-        <img alt="Avatar" class="avatar" src="{{ url_for('static', filename='images/avatar.png') }}">
-        {{ user }}'s Watchlist
+        <img alt="Avatar" src="{{ url_for('static', filename='images/avatar.png') }}"></br>
+        哈哈，你的URL地址无效，请检查URL或回到主页
     </h2>
-    <ul class="movie-list">
-        <li>
-            Page Not Found - 404
-            <span class="float-right">
-                <a href="{{ url_for('index') }}">Go Back</a>
-            </span>
-        </li>
-    </ul>
+        Page Not Found - 404 </br>
+        <span class="float-right">
+            <a href="{{ url_for('index') }}">回到主页</a>
+        </span>
     <footer>
         <small>&copy; 2022 <a href="https://github.com/ZHJ0125/bushu">ZHJ0125</a></small>
     </footer>
