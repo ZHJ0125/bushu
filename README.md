@@ -20,6 +20,6 @@
 
 ### 开源协议
 
-* 本项目使用 [GNU General Public License v3.0](../LICENSE) 开源许可协议
+* 本项目使用 [GNU General Public License v3.0](https://github.com/ZHJ0125/bushu/LICENSE) 开源许可协议
 * Gitee地址：https://gitee.com/zhj0125/bushu
 * GitHub地址：https://github.com/ZHJ0125/bushu

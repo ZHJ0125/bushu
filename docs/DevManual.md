@@ -168,6 +168,15 @@ Heroku 是一个 Web 部署平台，在本项目中，使用 Heroku 将本地应
 
 若您要开发其他功能，请阅读 [main.py](../main.py) 源代码
 
+## 参考资料
+
+* [mimotion Github](https://github.com/577fkj/mimotion)
+* [Flask Project Document](https://flask.palletsprojects.com/en/2.0.x/)
+* [Flask-WTF Document](https://flask-wtf.readthedocs.io/en/latest/quickstart/)
+* [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python)
+* [使用 HTML 和 CSS 构建一个注册表单](https://chinese.freecodecamp.org/news/how-to-build-sign-up-form-with-html-and-css/)
+* [Heroku 部署 Flask 项目过程](https://wakingup.herokuapp.com/post/1/Heroku%E9%83%A8%E7%BD%B2Flask%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B)
+
 ---
 
 ## 依赖项目
@@ -177,6 +186,6 @@ Heroku 是一个 Web 部署平台，在本项目中，使用 Heroku 将本地应
 
 ## 开源协议
 
-* 本项目使用 [GNU General Public License v3.0](../LICENSE) 开源许可协议
+* 本项目使用 [GNU General Public License v3.0](https://github.com/ZHJ0125/bushu/LICENSE) 开源许可协议
 * Gitee地址：https://gitee.com/zhj0125/bushu
 * GitHub地址：https://github.com/ZHJ0125/bushu
