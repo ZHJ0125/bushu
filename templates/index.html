@@ -20,9 +20,7 @@
                 {% endif %}
             {% endwith %}
             <h1 class="title">刷步数</h1>
-
-            <h3> 微信刷步数神器 </h3>
-
+            <p> 微信刷步数神器 <a href="https://github.com/ZHJ0125/bushu"> 帮助⁉ </a></p>
             <div class="inputContainer">
                 {{ form.csrf_token }}{{ form.username }}
                 <label for="" class="label">{{ form.username.label }}</label>
@@ -37,7 +35,7 @@
                 {{ form.csrf_token }}{{ form.steps }}
                 <label for="" class="label">{{ form.steps.label }}</label>
             </div>
-            
+
             {{ form.csrf_token }}{{ form.submit }}
         </form>
     </div>
