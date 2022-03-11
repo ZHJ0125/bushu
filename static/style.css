@@ -91,6 +91,20 @@ footer {
     font-size: 16px;
     margin-top: 30px;
 }
+
+.submitBtn_disable {
+    display: block;
+    margin-left: auto;
+    padding: 15px 30px;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    background-color: #9867C5;
+    transform: translateY(-2px);
+}
   
 .submitBtn:hover {
     background-color: #9867C5;
@@ -126,13 +140,23 @@ footer {
 }
 
 /* 闪现消息 */
-.alert {
+.message {
     position: relative;
     padding: 7px;
     margin: 7px 0;
     border: 1px solid transparent;
-    color: #004085;
-    background-color: #cce5ff;
+    color: #008500;
+    background-color: #ccffd5;
+    border-color: #b8daff;
+    border-radius: 5px;
+}
+.error {
+    position: relative;
+    padding: 7px;
+    margin: 7px 0;
+    border: 1px solid transparent;
+    color: #850000;
+    background-color: #ffcccc;
     border-color: #b8daff;
     border-radius: 5px;
 }

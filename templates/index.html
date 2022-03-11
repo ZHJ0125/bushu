@@ -12,29 +12,33 @@
     
     <div class="signupFrm">
         <form action="" class="form" method="post">
-            {% for message in get_flashed_messages() %}
-                <div class="alert">{{ message }}</div>
-            {% endfor %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <h1 class="title">刷步数</h1>
 
             <h3> 微信刷步数神器 </h3>
 
             <div class="inputContainer">
-                <input type="tel" name="username" class="input" placeholder="a" required>
-                <label for="" class="label">用户名（手机号）</label>
+                {{ form.csrf_token }}{{ form.username }}
+                <label for="" class="label">{{ form.username.label }}</label>
             </div>
 
             <div class="inputContainer">
-                <input type="password" name="password" class="input" placeholder="a" required>
-                <label for="" class="label">密码</label>
+                {{ form.csrf_token }}{{ form.password }}
+                <label for="" class="label">{{ form.password.label }}</label>
             </div>
 
             <div class="inputContainer">
-                <input type="number" name="steps" class="input" placeholder="a" required>
-                <label for="" class="label">步数（建议2000~50000）</label>
+                {{ form.csrf_token }}{{ form.steps }}
+                <label for="" class="label">{{ form.steps.label }}</label>
             </div>
-
-            <input type="submit" class="submitBtn" value="提交">
+            
+            {{ form.csrf_token }}{{ form.submit }}
         </form>
     </div>
 </body>
