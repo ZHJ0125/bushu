@@ -172,6 +172,7 @@ Heroku 是一个 Web 部署平台，在本项目中，使用 Heroku 将本地应
 ## 参考资料
 
 * [mimotion Github](https://github.com/577fkj/mimotion)
+* [HelloFlask Meta Github](https://github.com/greyli/helloflask)
 * [Flask Project Document](https://flask.palletsprojects.com/en/2.0.x/)
 * [Flask-WTF Document](https://flask-wtf.readthedocs.io/en/latest/quickstart/)
 * [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python)
