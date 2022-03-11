@@ -1,12 +1,15 @@
 # -*- coding: utf8 -*-
 from flask import Flask, render_template, request, flash, session, url_for, redirect
 from flask_wtf import FlaskForm
+from flask_sslify import SSLify
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Regexp
 import time, json, random, re, requests
 from urllib.parse import quote
 
 app = Flask(__name__)
+sslify = SSLify(app)
+app.config["DEBUG"] = False
 app.config['SECRET_KEY'] = 'ZHJ0125-bushu-dev'
 name = 'ZHJ0125'
 
@@ -23,9 +26,9 @@ def index():
     if request.method == 'POST':
         if form.validate_on_submit():
             # 数据格式正确，获取表单数据
-            print("username = " + form.username.data)
-            print("password = " + form.password.data)
-            print("steps = " + form.steps.data)
+            # print("username = " + form.username.data)
+            # print("password = " + form.password.data)
+            # print("steps = " + form.steps.data)
             # 验证步数范围
             if(int(form.steps.data) <= 0 or int(form.steps.data) > 40000):
                 flash('步数超出范围，请重新输入步数', 'error')

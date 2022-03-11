@@ -60,9 +60,9 @@ Python 3.7.2
 C:\Users\ZHJ\Desktop\bushu>pip -V
 pip 22.0.4 from D:\python\python3\install\lib\site-packages\pip (python 3.7)
 # 安装 Venv 虚拟环境
-C:\Users\ZHJ\Desktop\bushu>python -m venv venv
+C:\Users\ZHJ\Desktop\bushu>python -m venv env
 # 激活虚拟环境
-C:\Users\ZHJ\Desktop\bushu>venv\Scripts\activate
+C:\Users\ZHJ\Desktop\bushu>env\Scripts\activate
 # 激活之后会进入虚拟机环境，命令行显示如下（有venv提示）
 (venv) C:\Users\ZHJ\Desktop\bushu>
 # 将项目依赖添加到虚拟环境中，此过程需要联网下载依赖项
