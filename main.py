@@ -16,6 +16,7 @@ class MyForm(FlaskForm):
     steps = StringField('步数（建议2000~40000）', validators=[DataRequired()], render_kw={'type':'number', 'class':"input", 'placeholder':"a"})
     submit = SubmitField('提交', render_kw={'type':"submit", 'class':"submitBtn"})
 
+# 根地址路由
 @app.route('/', methods=['GET', 'POST'])
 def index():
     form = MyForm()
@@ -25,13 +26,14 @@ def index():
             print("username = " + form.username.data)
             print("password = " + form.password.data)
             print("steps = " + form.steps.data)
+            # 验证步数范围
             if(int(form.steps.data) <= 0 or int(form.steps.data) > 40000):
                 flash('步数超出范围，请重新输入步数', 'error')
                 return render_template('index.html', form=form)
             flash('正在请求刷新步数，请稍等...')
             form.submit.render_kw = {'type':"submit", 'class':"submitBtn_disable", 'disabled': 'disabled'}  # 禁用submit
             
-            #################################
+            ######### 调用 mimotion 项目的代码 #########
             
             session['_flashes'].clear()  # 清除所有闪现内容
             result = SendMiRequest(form.username.data, form.password.data, form.steps.data)
@@ -43,7 +45,7 @@ def index():
             # print(result)
             flash(result, type_of_message)
             
-            #################################
+            ###############  调用结束  ################
 
             form.submit.render_kw = {'type':"submit", 'class':"submitBtn"}  # 启用submit
         else:
@@ -52,9 +54,12 @@ def index():
     # 默认GET请求，返回主页面
     return render_template('index.html', form=form)
 
+# 404页面处理
 @app.errorhandler(404)  # 传入要处理的错误代码
 def page_not_found(e):  # 接受异常对象作为参数
     return render_template('404.html', user=name), 404  # 返回模板和状态码
+
+# ------------------- 以下为 mimotion 项目的代码移植 --------------------
 
 now = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())  # 当前时间
 headers = {  # API请求头
@@ -367,3 +372,6 @@ def get_app_token(login_token):
     # print("app_token获取成功！")
     # print(app_token)
     return app_token
+
+# ------------------- 以上为 mimotion 项目的代码移植 --------------------
+# END_OF_FILE

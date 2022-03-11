@@ -1,1 +1,25 @@
-# bushu
+# bushu 刷步数
+
+> ‼ 声明：本项目仅供娱乐及学习交流使用
+
+![show](docs/show.jpg)
+
+项目部署地址：[https://zhj-bushu.herokuapp.com](https://zhj-bushu.herokuapp.com/)
+
+### 项目概述
+
+顾名思义，本项目就是来帮助你躺着刷步数的。经测试，目前可以同步修改步数至 `微信运动` 和 `支付宝运动`。
+
+* 如果您是使用者，想快速实现刷步数，请阅读[用户手册](docs/UserManual.md)
+* 如果您是开发者，想了解本项目如何运行，请阅读[开发手册](docs/DevManual.md)
+
+### 依赖项目
+
+* [mimotion](https://github.com/577fkj/mimotion) ( Apache License 2.0 ) - 小米运动刷步数
+* [Flask](https://github.com/pallets/flask) ( BSD 3-Clause "New" or "Revised" License ) - 用于构建 Web 应用程序的 Python 微框架
+
+### 开源协议
+
+* 本项目使用 [GNU General Public License v3.0](../LICENSE) 开源许可协议
+* Gitee地址：https://gitee.com/zhj0125/bushu
+* GitHub地址：https://github.com/ZHJ0125/bushu
