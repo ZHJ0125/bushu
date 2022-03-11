@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>微信刷步数</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if form.mobile.errors %}
+        <ul class="errors">
+            {% for error in form.mobile.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="signupFrm">
+        <form method="POST">
+            {{ form.csrf_token }}
+            {{ form.mobile.label }} {{ form.mobile }}
+            <input type="submit" value="Go">
+        </form>
+    </div>
+</body>
+<footer>
+    <img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
+    <small>&copy; 2022 <a href="https://github.com/ZHJ0125/bushu">ZHJ0125</a></small></br>
+    <small>Power by Flask & Heroku</small></br>
+</footer>
+</html>
