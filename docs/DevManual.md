@@ -160,6 +160,7 @@ Heroku 是一个 Web 部署平台，在本项目中，使用 Heroku 将本地应
 │   └── index.html
 ├── .flaskenv           // flask环境变量
 ├── .gitignore
+├── LICENSE
 ├── main.py             // 主程序
 ├── Procfile            // Heroku的程序启动文件
 ├── README.md
@@ -186,6 +187,6 @@ Heroku 是一个 Web 部署平台，在本项目中，使用 Heroku 将本地应
 
 ## 开源协议
 
-* 本项目使用 [GNU General Public License v3.0](https://github.com/ZHJ0125/bushu/LICENSE) 开源许可协议
+* 本项目使用 [GNU General Public License v3.0](https://github.com/ZHJ0125/bushu/blob/main/LICENSE)  开源许可协议
 * Gitee地址：https://gitee.com/zhj0125/bushu
 * GitHub地址：https://github.com/ZHJ0125/bushu
