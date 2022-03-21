@@ -4,6 +4,8 @@
 
 ![show](docs/show.jpg)
 
+⚠ 提示：请在下午或晚上时间段刷步数，深夜凌晨可能会运行失败。
+
 项目部署地址：[https://zhj-bushu.herokuapp.com](https://zhj-bushu.herokuapp.com/)
 
 ### 项目概述
@@ -21,5 +23,5 @@
 ### 开源协议
 
 * 本项目使用 [GNU General Public License v3.0](https://github.com/ZHJ0125/bushu/blob/main/LICENSE) 开源许可协议
-* Gitee地址：https://gitee.com/zhj0125/bushu
+* Gitee地址：https://gitee.com/zhj0125/bushu （用户手册已被ban）
 * GitHub地址：https://github.com/ZHJ0125/bushu
