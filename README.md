@@ -14,6 +14,7 @@
 
 * 如果您是使用者，想快速实现刷步数，请阅读[用户手册](docs/UserManual.md)
 * 如果您是开发者，想了解本项目如何运行，请阅读[开发手册](docs/DevManual.md)
+* 如果您想了解我在入门 Flask 时编写的代码，请转至 [Flask-Learn](https://github.com/ZHJ0125/bushu/tree/Flask-Learn) 分支
 
 ### 依赖项目
 
