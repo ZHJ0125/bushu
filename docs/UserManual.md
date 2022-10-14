@@ -21,7 +21,7 @@
 
 ### 开刷
 
-* 打开本项目网页：[https://zhj-bushu.herokuapp.com](https://zhj-bushu.herokuapp.com/)
+* 打开本项目网页：[https://bushu.houjin.tech/](https://bushu.houjin.tech/)
 * 依次输入`小米账号`、`密码`和要刷到的`步数`（***步数要小于4万***）
 * 点击 `提交` 按钮即可（刷步数成功或失败都会有提示）
 
@@ -67,6 +67,7 @@
 
 * [mimotion](https://github.com/577fkj/mimotion) ( Apache License 2.0 ) - 小米运动刷步数
 * [Flask](https://github.com/pallets/flask) ( BSD 3-Clause "New" or "Revised" License ) - 用于构建 Web 应用程序的 Python 微框架
+* [Docker](https://github.com/docker) - Develop faster. Run anywhere.
 
 ## 开源协议
 
