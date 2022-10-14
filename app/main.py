@@ -1,14 +1,14 @@
 # -*- coding: utf8 -*-
 from flask import Flask, render_template, request, flash, session, url_for, redirect
 from flask_wtf import FlaskForm
-from flask_sslify import SSLify
+# from flask_sslify import SSLify
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired, Regexp
 import time, json, random, re, requests
 from urllib.parse import quote
 
 app = Flask(__name__)
-sslify = SSLify(app)
+# sslify = SSLify(app)
 app.config["DEBUG"] = False
 app.config['SECRET_KEY'] = 'ZHJ0125-bushu-dev'
 name = 'ZHJ0125'

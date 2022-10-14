@@ -4,21 +4,27 @@
 
 此文档面向开发者，如果您是普通用户，请移步至[用户手册](./UserManual.md)。
 
-## 项目概述
+## 1. 项目概述
 
 * 核心代码使用[方块君](https://github.com/577fkj) 大佬的 [mimotion](https://github.com/577fkj/mimotion) 项目
 * Web 界面使用 [Flask](https://github.com/pallets/flask) 框架
-* 网页代码部署在 [Heroku](https://www.heroku.com/) 平台
+* 网页使用 [Docker](https://hub.docker.com/repository/docker/zhj0125/bushu) 驱动
 * 源代码托管在 [GitHub](https://github.com/ZHJ0125/bushu) 平台
 
-## 如何构建本项目
+## 2. 如何构建本项目
 
-### 在本地运行此项目
+您可以尝试使用以下三种方式运行本项目：
 
-1. 克隆本项目
+1. 只在本地运行此项目
+2. 使用Heroku方式托管网页 - Heroku分支（不再维护，不需要服务器）
+3. 使用Docker方式驱动网页 - main主分支（推荐方式，但需要服务器）
+
+### 2.1 在本地运行此项目
+
+1. 克隆本项目(以主分支+Windows环境为例)
 
 ```powershell
-# 克隆本项目
+# 打开CMD命令行，克隆本项目
 C:\Users\ZHJ\Desktop>git clone https://github.com/ZHJ0125/bushu.git
 Cloning into 'bushu'...
 remote: Enumerating objects: 58, done.

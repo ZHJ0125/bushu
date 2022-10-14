@@ -20,7 +20,7 @@
                 {% endif %}
             {% endwith %}
             <h1 class="title">刷步数</h1>
-            <p> 微信刷步数神器 &emsp;<a href="https://gitee.com/zhj0125/bushu/blob/main/docs/UserManual.md"> 帮助⁉ </a></p>
+            <p> 微信刷步数神器 &emsp;<a href="https://github.com/ZHJ0125/bushu/blob/main/docs/UserManual.md"> 帮助⁉ </a></p>
             <div class="inputContainer">
                 {{ form.csrf_token }}{{ form.username }}
                 <label for="" class="label">{{ form.username.label }}</label>
@@ -42,7 +42,12 @@
 </body>
 <footer>
     <img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}">
-    <small>&copy; 2022 <a href="https://github.com/ZHJ0125/bushu">ZHJ0125</a></small></br>
-    <small>Power by Flask & Heroku</small></br>
+    <small>Copyright  &copy; 2022 <a href="https://github.com/ZHJ0125/bushu">ZHJ0125</a></small></br>
+    <small>Power by Flask & Docker</small></br>
+    <small>备案号:
+        <a target="_blank" href="http://www.beian.miit.gov.cn/" target="_blank" rel="nofollow noopener" style="color:#737373;">鲁ICP备2022030036号-1</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37010102001586" style="color:#737373;">鲁公网安备 37010102001586号</a>
+    </small></br>
 </footer>
 </html>
