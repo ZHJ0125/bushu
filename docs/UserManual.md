@@ -21,11 +21,13 @@
 
 ### 开刷
 
+**⚠ 注意：开刷之前务必开启手机运动健康(步数)权限，以使手机获取到华米(小米)运动所提供的运动健康(步数)数据，否则步数将同步失败！**
+
 * 打开本项目网页：[https://bushu.houjin.tech/](https://bushu.houjin.tech/)
 * 依次输入`小米账号`、`密码`和要刷到的`步数`（***步数要小于4万***）
 * 点击 `提交` 按钮即可（刷步数成功或失败都会有提示）
 
-> 请不要频繁刷步数，若过于频繁地刷步数，有可能导致您的账号被封。
+> ⚠ 注意：请不要频繁刷步数，若过于频繁地刷步数，有可能导致您的账号被封。
 
 ## Q&A
 
@@ -41,9 +43,9 @@
 
 ### 会被封号？
 
-大家可能会有疑问：刷步数会不会导致我的账号被封？如果您过于频繁地刷步数，我觉得会被封！
+如果您过于频繁地刷步数，您的华米(小米)账号是有可能会被封的！
 
-是这样的，由于华米官方API的请求数据中，需要包括地理位置、步数、运动时间、设备ID等多种类型的数据，而在 [mimotion](https://github.com/577fkj/mimotion) 项目中，会伪造一些地理位置数据，将其打包发送至API接口。
+由于华米官方API的请求数据中，需要包括地理位置、步数、运动时间、设备ID等多种类型的数据，而在 [mimotion](https://github.com/577fkj/mimotion) 项目中，会伪造一些地理位置数据，将其打包发送至API接口。
 
 因此，有可能官方API接口会检测到**过于频繁的重复数据**，导致您的账号被封。
 
@@ -51,15 +53,18 @@
 
 ### 为什么做这个项目？
 
-闲着没事做着玩的😂
+<details>
+<summary>闲着没事做着玩的😂</summary>
 
 前几天在 Telegram 的 [Shadowrocket](https://t.me/ShadowrocketApp) 官方群，有个大佬发了一个刷步数的iOS快捷指令，我试了试，居然真的可以刷步数，当时挺惊喜的。
 
 后来搜了一下，原来网上有好多刷步数的教程、网站，比较出名的比如 [https://bushu.wang/](https://bushu.wang/)，以及这个[快捷指令](https://www.icloud.com/shortcuts/a759d3db3f9b4d24a318a343400f7b54)。总之，网上已经有很多类似项目了。
 
-后来我在GitHub上找到了 [方块君](https://github.com/577fkj) 大佬的 [mimotion](https://github.com/577fkj/mimotion) 项目，这个项目使用python写的，只写了核心的请求代码，没有图形化界面。对比一下 [https://bushu.wang/](https://bushu.wang/)，总觉得 mimotion 有些简陋。于是，我开始在网上查找资料，想要为 mimotion 写一个图形(web)界面。
+后来我在GitHub上找到了 [方块君](https://github.com/577fkj) 大佬的 [mimotion](https://github.com/577fkj/mimotion) 项目，这个项目使用python写的，只写了核心的请求代码，没有图形化界面。对比一下 [https://bushu.wang/](https://bushu.wang/)，总觉得 mimotion 有些简陋。于是，我开始在网上查找资料，想依赖 mimotion 的核心代码写一个图形界面。
 
 几天后，就有了本项目。
+
+</details>
 
 ---
 
@@ -72,5 +77,5 @@
 ## 开源协议
 
 * 本项目使用 [GNU General Public License v3.0](https://github.com/ZHJ0125/bushu/blob/main/LICENSE)  开源许可协议
-* Gitee地址：https://gitee.com/zhj0125/bushu
 * GitHub地址：https://github.com/ZHJ0125/bushu
+* Gitee地址：https://gitee.com/zhj0125/bushu

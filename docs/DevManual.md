@@ -8,33 +8,34 @@
 
 * 核心代码使用[方块君](https://github.com/577fkj) 大佬的 [mimotion](https://github.com/577fkj/mimotion) 项目
 * Web 界面使用 [Flask](https://github.com/pallets/flask) 框架
-* 网页使用 [Docker](https://hub.docker.com/repository/docker/zhj0125/bushu) 驱动
+* 网页由运行在腾讯云的 [Docker](https://hub.docker.com/repository/docker/zhj0125/bushu) 驱动
 * 源代码托管在 [GitHub](https://github.com/ZHJ0125/bushu) 平台
 
 ## 2. 如何构建本项目
 
-> 提示：快速上手可参考 `2.3.2 从 DockerHub 拉取镜像并运行`
+> ✔ 提示 1：快速上手可参考 `2.3.2 从 DockerHub 拉取镜像并运行`<br>
+> ⚠ 提示 2：在服务器上运行时需要开放对应端口的防火墙
 
 您可以尝试使用以下三种方式运行本项目，三种方式要求的环境如下：
 
 1. 使用 Python Venv 虚拟环境
-    * 建议使用 Linux 系统
-    * Python3.x 版本
-2. 使用 Heroku 方式托管网页 - Heroku 分支（不再维护，不需要服务器）
+    * 建议使用 Linux 系统（Windows环境需要解决fcntl问题）
+    * 安装 Python3.x 版本
+2. 使用 Heroku 方式托管网页 - 属于 Heroku 分支（目前不再维护，此方式不需要服务器）
     * 需要拉取 Heroku 分支的代码
     * 建议使用 Windows 系统
-    * Python3.x 版本
-3. 使用 Docker 方式驱动网页 - main 主分支（推荐方式，但需要服务器）
-    * 建议使用 Linux 系统
+    * 安装 Python3.x 版本
+3. 使用 Docker 方式驱动网页 - main 主分支（推荐此方式，但需要服务器）
+    * 建议使用 Linux 系统（Windows环境需要解决fcntl问题）
     * 需要已安装 Docker
     * Python3.x 版本
 
 ### 2.1 使用 Python Venv 虚拟环境
 
-1. 克隆本项目(以Linux环境为例)
+1. 克隆本项目（以 Linux 环境为例）
 
 ```bash
-# 打开CMD命令行，克隆本项目
+# 打开终端，克隆本项目
 zhj@ubuntu:~$ git clone https://github.com/ZHJ0125/bushu.git
 Cloning into 'bushu'...
 remote: Enumerating objects: 137, done.
@@ -74,7 +75,6 @@ zhj@ubuntu:~/bushu$ source env/bin/activate
 (env) zhj@ubuntu:~/bushu$ 
 # 在env环境中更新其pip版本
 (env) zhj@ubuntu:~/bushu$ python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip
-Cache entry deserialization failed, entry ignored
 Collecting pip
   Using cached https://pypi.tuna.tsinghua.edu.cn/packages/1f/2c/d9626f045e7b49a6225c6b09257861f24da78f4e5f23af2ddbdf852c99b8/pip-22.2.2-py3-none-any.whl
 Installing collected packages: pip
@@ -82,7 +82,7 @@ Installing collected packages: pip
     Uninstalling pip-9.0.1:
       Successfully uninstalled pip-9.0.1
 Successfully installed pip-22.2.2
-# 将项目依赖添加到虚拟环境中，此过程需要联网下载依赖项
+# 将项目依赖添加到虚拟环境中
 (env) zhj@ubuntu:~/bushu$ pip install -r app/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 # 列出已下载的依赖项，如下所示
 (env) zhj@ubuntu:~/bushu$ pip list
@@ -119,7 +119,7 @@ zope.interface     5.4.0
 3. 本地运行此项目
 
 ```bash
-# 本地运行此本项目
+# 本地运行此本项目（注意要在 env 环境下运行）
 (env) zhj@ubuntu:~/bushu$ gunicorn -c gunicorn.conf.py --chdir ./app main:app
 [2022-10-15 04:12:41 +0800] [59299] [INFO] Starting gunicorn 20.1.0
 [2022-10-15 04:12:41 +0800] [59299] [INFO] Listening at: http://0.0.0.0:8103 (59299)
@@ -133,21 +133,21 @@ zope.interface     5.4.0
 
 ### 2.2 使用 Heroku 方式托管网页
 
-⚠ 注：Heroku方式已从主分支剥离，若使用Heroku托管，请转至 [Heroku 分支](https://github.com/ZHJ0125/bushu/tree/heroku) 了解详情。
+⚠ 注：Heroku方式已从主分支剥离，若要使用Heroku托管方式，请转至 [Heroku 分支](https://github.com/ZHJ0125/bushu/tree/heroku) 了解详情。
 
 ### 2.3 使用 Docker 方式驱动网页
 
-Dockerfile是用来创建Docker镜像的脚本，本项目提供Dockerfile文件进行镜像构建；
-DockerHub是专门托管Docker镜像的平台，本项目中所使用的镜像也已经上传到了DockerHub中；
+* Dockerfile 是用来创建 Docker 镜像的文件，本项目提供 Dockerfile 文件进行镜像构建；
+* DockerHub 是专门托管 Docker 镜像的平台，本项目中所使用的镜像也已经上传到了 DockerHub 中；
 
-因此您可以选择自己构建Docker镜像或者直接从DockerHub拉取镜像两种方式。
+因此您可以选择自己构建 Docker 镜像或者直接从 DockerHub 拉取镜像两种方式。
 
 #### 2.3.1 从 Dockerfile 构建镜像并运行
 
-1. 克隆本项目(主分支+Linux服务器环境为例)
+1. 克隆本项目（主分支+ Linux 服务器环境为例）
 
 ```bash
-# 打开CMD命令行，克隆本项目
+# 打开终端，克隆本项目
 zhj@ubuntu:~$ git clone https://github.com/ZHJ0125/bushu.git
 Cloning into 'bushu'...
 remote: Enumerating objects: 137, done.
@@ -176,9 +176,11 @@ drwxrwxr-x  8 zhj zhj 4096 Oct 15 03:50 .git
 
 ```bash
 # 检查 Docker 版本，若未安装请自行安装
+# Docker 安装过程可参考清华大学开源软件镜像站帮助文档：
+# https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/
 zhj@ubuntu:~/bushu$ docker -v
 Docker version 20.10.18, build b40c2f6
-# 构建 Docker 镜像
+# 构建 Docker 镜像（确保在 bushu 根目录下，此路径下有 Dockerfile 文件）
 zhj@ubuntu:~/bushu$ docker build -t "bushu:v0.1" .
 Sending build context to Docker daemon  684.5kB
 Step 1/9 : FROM python:3.7
@@ -214,28 +216,22 @@ Removing intermediate container 7aeac3683b6d
  ---> bf6b68080e40
 Successfully built bf6b68080e40
 Successfully tagged bushu:v0.1
-# 启动docker，运行容器
+# 启动 Docker，运行容器
 # 注1：以下命令为后台运行该容器
-# 注2：8000端口为本机映射端口，可修改；8103为docker内部端口，不要修改
-zhj@ubuntu:~/bushu$ docker run -it -d -p 8103:8000 bushu:v0.1
+# 注2：8000端口为本机映射端口，可修改为其他端口；8103为 Docker 内部端口，不要修改
+# 注3：更多关于 Docker 命令参数说明请查阅 Docker 文档：https://docs.docker.com/
+zhj@ubuntu:~/bushu$ docker run -it -d -p 8000:8103 bushu:v0.1
 d7c0be07ab572caceef5be60d85b6167a93435845cc1e54cc074e250ba260a53
-# 运行后访问 http://服务器公网IP:8000 即可
+# 运行后访问 http://服务器IP:8000 即可
 ```
-
-⚠ 注：需要注意的是，当您在非服务器环境下使用 docker 时，如在虚拟机上安装 docker 并执行 `2.3 使用 Docker 方式驱动网页`，需要在运行 docker 容器时指定容器网络为 host 模式，即：
-
-```bash
-# 在虚拟机上运行容器
-zhj@ubuntu:~/bushu$ docker run -it --net=host -d -p 8103:8000 bushu:v0.1
-```
-
-此时创建出来的容器，直接使用容器宿主机的网络命名空间，使用宿主机的ip和端口。因此访问 http://宿主机IP:8103 即可。
 
 #### 2.3.2 从 DockerHub 拉取镜像并运行
 
+> 在已安装 Docker 的环境下，此方式最为简单，只需 2 条命令即可部署完成。
+
 ```bash
-# 拉取镜像
-zhj@ubuntu:~/bushu$ docker pull zhj0125/bushu
+# 1. 拉取镜像
+zhj@ubuntu:~$ docker pull zhj0125/bushu
 Using default tag: latest
 latest: Pulling from zhj0125/bushu
 f606d8928ed3: Already exists 
@@ -254,10 +250,11 @@ bb3d159899fa: Pull complete
 Digest: sha256:d0fcf92f9a6619e2c3c998d006ba0abbc389b657a425da41cef1f00f28bb8455
 Status: Downloaded newer image for zhj0125/bushu:latest
 docker.io/zhj0125/bushu:latest
-# 运行容器
-zhj@ubuntu:~/bushu$ docker run -it -d -p 8103:8103 zhj0125/bushu
-051663e64fb4119d6c3e261ac4f2148407e8671c50c67df30fdb1cd184043f1c
-# 访问 http://ip:8103 即可
+# 2. 运行容器
+# 注：8080端口为本机映射端口，可修改为其他端口；8103为 Docker 内部端口，不要修改
+zhj@ubuntu:~$ docker run -it -d -p 8080:8103 zhj0125/bushu
+c6557923aab001bcae0104875fd3cee22329e5ac01885161ff01a383d67c6a39
+# 3. 访问 http://ip:8080 即可
 ```
 
 ## 项目代码梳理
@@ -270,14 +267,14 @@ zhj@ubuntu:~/bushu$ docker run -it -d -p 8103:8103 zhj0125/bushu
 │   ├── main.py            // 主程序
 │   ├── requirements.txt   // 依赖文件
 │   ├── static             // 图片等静态文件
-│   └── templates          // HTML网页
-├── Dockerfile             // 用于构建Docker镜像
+│   └── templates          // HTML 网页文件夹
+├── Dockerfile             // 用于构建 Docker 镜像
 ├── docs
 │   ├── DevLog.md          // 开发日志
 │   ├── DevManual.md       // 开发手册
 │   ├── show.jpg           // 展示图片
 │   └── UserManual.md      // 使用手册
-├── gunicorn.conf.py       // gunicorn配置文件
+├── gunicorn.conf.py       // gunicorn 配置文件
 └── README.md
 ```
 
@@ -289,9 +286,9 @@ zhj@ubuntu:~/bushu$ docker run -it -d -p 8103:8103 zhj0125/bushu
 * [HelloFlask Meta Github](https://github.com/greyli/helloflask)
 * [Flask Project Document](https://flask.palletsprojects.com/en/2.0.x/)
 * [Flask-WTF Document](https://flask-wtf.readthedocs.io/en/latest/quickstart/)
-* [Getting Started on Heroku with Python](https://devcenter.heroku.com/articles/getting-started-with-python)
+* [Docker Docs - Dockerfile reference](https://docs.docker.com/engine/reference/builder/)
+* [Docker Community Edition 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/)
 * [使用 HTML 和 CSS 构建一个注册表单](https://chinese.freecodecamp.org/news/how-to-build-sign-up-form-with-html-and-css/)
-* [Heroku 部署 Flask 项目过程](https://wakingup.herokuapp.com/post/1/Heroku%E9%83%A8%E7%BD%B2Flask%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B)
 
 ---
 
