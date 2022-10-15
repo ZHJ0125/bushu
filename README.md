@@ -6,7 +6,8 @@
 
 ⚠ 提示：请在下午或晚上时间段刷步数，深夜凌晨可能会运行失败。
 
-项目部署地址：[https://bushu.houjin.tech](https://bushu.houjin.tech)
+* 项目部署地址：[https://bushu.houjin.tech](https://bushu.houjin.tech)
+* DockerHub镜像地址：[https://hub.docker.com/repository/docker/zhj0125/bushu](https://hub.docker.com/repository/docker/zhj0125/bushu)
 
 ### 项目概述
 
