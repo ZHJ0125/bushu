@@ -8,7 +8,7 @@
 
 * 核心代码使用[方块君](https://github.com/577fkj) 大佬的 [mimotion](https://github.com/577fkj/mimotion) 项目
 * Web 界面使用 [Flask](https://github.com/pallets/flask) 框架
-* 网页由运行在腾讯云的 [Docker](https://hub.docker.com/repository/docker/zhj0125/bushu) 驱动
+* 网页由运行在腾讯云的 [Docker](https://hub.docker.com/repository/docker/zhj0125/bushu) 镜像驱动
 * 源代码托管在 [GitHub](https://github.com/ZHJ0125/bushu) 平台
 
 ## 2. 如何构建本项目
@@ -227,7 +227,9 @@ d7c0be07ab572caceef5be60d85b6167a93435845cc1e54cc074e250ba260a53
 
 #### 2.3.2 从 DockerHub 拉取镜像并运行
 
-> 在已安装 Docker 的环境下，此方式最为简单，只需 2 条命令即可部署完成。
+在已安装 Docker 的环境下，此方式最为简单，只需 2 条命令即可部署完成。
+
+> 附：DockerHub 镜像地址为 https://hub.docker.com/r/zhj0125/bushu
 
 ```bash
 # 1. 拉取镜像
