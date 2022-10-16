@@ -4,6 +4,10 @@
 > :radio_button: 修改
 > :no_entry: 删除
 
+---
+
+* 2022年10月16日
+    * :radio_button:        补加遗漏的 GNU General Public License v3.0 开源许可协议文件
 * 2022年10月15日
     * :radio_button:        修复说明文档中的错误
     * :radio_button:        修复 Docker 端口映射问题
